@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "Aachen", sans-serif;
+  src: url("/fonts/unicode.aachenb.ttf");
+}
+
+:root {
+  --fuente-principal: "Aachen", sans-serif;
+  --fuente-secundaria: "Roboto", sans-serif;
+  --color-primario: #dc8821;
+  --color-secundario: #51924b;
+  --color-fuente-principal: #24334b;
+  --color-blanco: #fff;
+  --color-fuente-secundaria: #817242;
+  --color-fuente-claro: #5ba69c;
+  --color-fuente-grande: #332825;
+}
+
+/*  iniciamos las etiquetas sencillas */
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+}
+
+/* interfaz */
+
+.hero {
+  background: linear-gradient(
+      to right,
+      rgba(20, 20, 20, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../img/heromain.jpg") no-repeat center center;
+  height: 110vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% auto;
+
+  grid-template-areas:
+    "cabecera"
+    "info";
+}
+
+.cabecera {
+  grid-area: cabecera;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background: #28282d;
+  opacity: 0.9;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.logo:hover {
+  cursor: pointer;
+  -webkit-filter: invert(0.4) sepia(1) hue-rotate(20deg) saturate(1000%);
+  filter: invert(0.4) sepia(1) hue-rotate(20deg) saturate(1000%);
+}
+
+nav.navbar {
+  display: none;
+}
+
+nav.navbar ul li {
+  margin-left: 2rem;
+}
+nav.navbar ul li a {
+  color: white;
+  font-family: var(--fuente-principal);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.2s all ease-in;
+}
+
+nav.navbar ul li a:hover {
+  color: #e58f00;
+  border-bottom: 5px solid #e58f00;
+}
+/* alineamos los elementos  */
+.navbar {
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+/* mantenemos oculta el nav menu con -100% a la izaquierda */
+.nav-menu {
+  visibility: hidden;
+}
+
+/* mostramos el icono */
+.iconbar {
+  display: block;
+  cursor: pointer;
+}
+
+  
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+  }
+
+@media screen and (min-width: 760px) {
+  nav.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconbar {
+    display: none;
+  }
+
+
+  nav.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-menu {
+    visibility: visible;
+  }
+  
+
+
+}
+
+.informacion-hero {
+  grid-area: info;
+  position: relative;
+  max-width: 1110px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.imagen-info {
+  margin-right: 2rem;
+}
+.informacion-hero img {
+  width: 600px !important;
+}
+
+.texto-hero h1 {
+  font-family: var(--fuente-principal);
+  font-size: 4rem;
+  color: #e58f00;
+}
+
+.texto-hero p {
+  font-family: var(--fuente-principal);
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.btn-hero {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-family: var(--fuente-principal);
+  font-size: 2rem;
+  background: #e58f00;
+  color: #28282d;
+  transition: 0.2s all ease-in;
+}
+.btn-hero:hover {
+  cursor: pointer;
+  background: #754902;
+  color: #ffffff;
+}
+.principal {
+  width: 100%;
+  background: #17171e;
+}
+.contenedor {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 5rem;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+
+  align-items: center;
+}
+.contenedor-imagen {
+  margin-top: 3rem;
+  width: auto;
+  height: 645px;
+}
+.contenedor-info {
+  padding: 2rem;
+}
+
+.contenedor-info h2,
+.section-food h2 {
+  color: white;
+  font-family: var(--fuente-principal);
+  font-size: 3rem;
+}
+
+.contenedor-info p,
+.section-food p {
+  color: white;
+  font-family: var(--fuente-principal);
+  font-size: 1.5rem;
+}
+
+.section-food {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 930px;
+  background: url("../img/fondo.svg") no-repeat top center;
+  background-size: cover;
+}
+
+.food-title {
+  margin-top: 5rem;
+  padding: 5rem;
+}
+
+.food-img img {
+  position: relative;
+  right: -60%;
+  top: -200px;
+}
